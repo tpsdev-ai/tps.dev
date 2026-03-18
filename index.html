@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TPS — Technical Process System</title>
+  <title>TPS — Report</title>
   <meta name="description" content="Build teams of AI agents that coordinate, remember, and ship — without you in the loop.">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -33,11 +33,10 @@
     <div class="field-label">Subject</div>
     <div class="subject-text">Agent Infrastructure</div>
     <div class="description">Build teams of AI agents that coordinate, remember, and ship — without you in the loop.</div>
-    <code class="install-cmd"><span class="prompt">$ </span>npm install -g @tpsdev-ai/cli</code>
   </section>
 
   <!-- Section 1: Flair -->
-  <section class="report-section">
+  <section class="report-section" id="flair">
     <div class="section-number">Section 1</div>
     <div class="section-title">FLAIR</div>
     <div class="section-desc">Identity, memory, and soul for AI agents.</div>
@@ -45,7 +44,7 @@
       <tr><td class="field-key">Auth</td><td class="field-val">Ed25519 cryptographic identity</td></tr>
       <tr><td class="field-key">Memory</td><td class="field-val">Semantic search, local embeddings</td></tr>
       <tr><td class="field-key">Soul</td><td class="field-val">Persistent personality + context</td></tr>
-      <tr><td class="field-key">Runtime</td><td class="field-val">Single Harper process</td></tr>
+      <tr><td class="field-key">Runtime</td><td class="field-val">Single <a href="https://www.harperdb.io/">Harper</a> process</td></tr>
       <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
     </table>
     <div class="section-links">
@@ -56,7 +55,7 @@
   </section>
 
   <!-- Section 2: CLI -->
-  <section class="report-section">
+  <section class="report-section" id="cli">
     <div class="section-number">Section 2</div>
     <div class="section-title">CLI</div>
     <div class="section-desc">The office OS for agent teams.</div>
@@ -64,7 +63,7 @@
       <tr><td class="field-key">Mail</td><td class="field-val">Intra-office messaging</td></tr>
       <tr><td class="field-key">Pulse</td><td class="field-val">PR lifecycle automation</td></tr>
       <tr><td class="field-key">Branches</td><td class="field-val">Distributed agent offices</td></tr>
-      <tr><td class="field-key">Sandbox</td><td class="field-val">nono process isolation</td></tr>
+      <tr><td class="field-key">Sandbox</td><td class="field-val"><a href="https://github.com/tpsdev-ai/cli/tree/main/packages/nono">nono</a> process isolation</td></tr>
       <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
     </table>
     <div class="section-links">
@@ -75,13 +74,13 @@
   </section>
 
   <!-- Section 3: Agent -->
-  <section class="report-section">
+  <section class="report-section" id="agent">
     <div class="section-number">Section 3</div>
     <div class="section-title">AGENT</div>
     <div class="section-desc">Headless agent runtime.</div>
     <table class="field-table">
       <tr><td class="field-key">Execution</td><td class="field-val">Mail-driven task loop</td></tr>
-      <tr><td class="field-key">Isolation</td><td class="field-val">nono-sandboxed</td></tr>
+      <tr><td class="field-key">Isolation</td><td class="field-val"><a href="https://github.com/tpsdev-ai/cli/tree/main/packages/nono">nono</a>-sandboxed</td></tr>
       <tr><td class="field-key">Deployment</td><td class="field-val">Zero-config, single process</td></tr>
       <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
     </table>
@@ -93,7 +92,7 @@
   </section>
 
   <!-- Section 4: Architecture -->
-  <section class="architecture">
+  <section class="architecture" id="architecture">
     <div class="section-number">Section 4</div>
     <div class="section-title">ARCHITECTURE</div>
     <div class="arch-diagram-css">
@@ -106,10 +105,10 @@
         <div class="arch-line-down"></div>
       </div>
       <div class="arch-row">
-        <div class="arch-box arch-box-accent">Flair<span class="arch-sub">(Harper)</span></div>
+        <div class="arch-box arch-box-accent"><a href="#flair">Flair</a><span class="arch-sub">(<a href="https://www.harperdb.io/">Harper</a>)</span></div>
       </div>
     </div>
-    <div class="arch-caption">Agents are processes. Flair is shared memory. Mail is the bus. The CLI is the OS.</div>
+    <div class="arch-caption">Agents are processes. <a href="#flair">Flair</a> is shared memory. Mail is the bus. The <a href="#cli">CLI</a> is the OS.</div>
   </section>
 
   <!-- Approvals -->
@@ -141,7 +140,6 @@
 </div>
 
 <script>
-  // Auto-fill date
   document.getElementById('report-date').textContent =
     new Date().toISOString().slice(0, 10);
 </script>

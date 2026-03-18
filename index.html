@@ -55,15 +55,13 @@
 
     <div class="subsection">
       <div class="subsection-title"><a href="https://openclaw.ai/">OpenClaw</a> Plugin</div>
-      <div class="section-desc">Drop-in memory for <a href="https://openclaw.ai/">OpenClaw</a> agents. Zero config — install and go.</div>
-      <table class="field-table">
-        <tr><td class="field-key">Install</td><td class="field-val">openclaw plugins install @tpsdev-ai/openclaw-flair</td></tr>
-        <tr><td class="field-key">Config</td><td class="field-val">Auto-detects agent identity</td></tr>
-        <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
-      </table>
-      <div class="section-links">
-        <a href="https://www.npmjs.com/package/@tpsdev-ai/openclaw-flair">npmjs.com/@tpsdev-ai/openclaw-flair</a>
+      <div class="section-desc">Drop-in memory for OpenClaw agents.</div>
+      <div class="setup-steps">
+        <code class="install-cmd"><span class="prompt">$ </span>flair init</code>
+        <code class="install-cmd"><span class="prompt">$ </span>flair agent create my-agent</code>
+        <code class="install-cmd"><span class="prompt">$ </span>openclaw plugins install @tpsdev-ai/openclaw-flair</code>
       </div>
+      <div class="setup-note">Agent identity auto-detected. Memory persists across sessions.</div>
     </div>
   </section>
 

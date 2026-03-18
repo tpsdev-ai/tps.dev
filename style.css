@@ -180,6 +180,23 @@ body {
   border-bottom-color: var(--accent);
 }
 
+.setup-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.75rem 0;
+}
+
+.setup-steps .install-cmd {
+  display: block;
+}
+
+.setup-note {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  font-style: italic;
+}
+
 /* Field table */
 .field-table {
   width: 100%;

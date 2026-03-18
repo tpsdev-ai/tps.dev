@@ -93,16 +93,19 @@
   <section class="architecture">
     <div class="section-number">Section 4</div>
     <div class="section-title">ARCHITECTURE</div>
-    <div class="arch-diagram">  ┌──────────┐  mail   ┌──────────┐
-  │  Agent A  │◄──────►│  Agent B  │
-  └────┬─────┘         └────┬─────┘
-       │                    │
-       └───────┬────────────┘
-               │
-         ┌─────▼─────┐
-         │   Flair    │
-         │  (Harper)  │
-         └───────────┘</div>
+    <div class="arch-diagram-css">
+      <div class="arch-row">
+        <div class="arch-box">Agent A</div>
+        <div class="arch-arrow">&#8592; mail &#8594;</div>
+        <div class="arch-box">Agent B</div>
+      </div>
+      <div class="arch-connector">
+        <div class="arch-line-down"></div>
+      </div>
+      <div class="arch-row">
+        <div class="arch-box arch-box-accent">Flair<span class="arch-sub">(Harper)</span></div>
+      </div>
+    </div>
     <div class="arch-caption">Agents are processes. Flair is shared memory. Mail is the bus. The CLI is the OS.</div>
   </section>
 

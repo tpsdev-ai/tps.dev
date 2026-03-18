@@ -371,6 +371,13 @@ body {
   font-style: italic;
 }
 
+.footer-stapler {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+  image-rendering: pixelated;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   body {

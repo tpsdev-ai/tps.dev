@@ -156,6 +156,30 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Subsections */
+.subsection {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-light);
+}
+
+.subsection-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.subsection-title a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.subsection-title a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 /* Field table */
 .field-table {
   width: 100%;

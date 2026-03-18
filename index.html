@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TPS — Technical Process System</title>
+  <meta name="description" content="Build teams of AI agents that coordinate, remember, and ship — without you in the loop.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="tps-report">
+
+  <!-- Header -->
+  <header class="report-header">
+    <h1>TPS REPORT</h1>
+    <div class="subtitle">Technical Process System — Development Division</div>
+    <div class="report-meta">
+      <span><span class="field-label">Form:</span> TPS-001 Rev. 3</span>
+      <span><span class="field-label">Date:</span> <time id="report-date">2026-03-18</time></span>
+      <span><span class="field-label">Classification:</span> <span class="classification">PUBLIC</span></span>
+    </div>
+  </header>
+
+  <!-- Subject -->
+  <section class="report-subject">
+    <div class="field-label">Subject</div>
+    <div class="subject-text">Agent Infrastructure</div>
+    <div class="description">Build teams of AI agents that coordinate, remember, and ship — without you in the loop.</div>
+    <code class="install-cmd"><span class="prompt">$ </span>npm install -g @tpsdev-ai/cli</code>
+  </section>
+
+  <!-- Section 1: Flair -->
+  <section class="report-section">
+    <div class="section-number">Section 1</div>
+    <div class="section-title">FLAIR</div>
+    <div class="section-desc">Identity, memory, and soul for AI agents.</div>
+    <table class="field-table">
+      <tr><td class="field-key">Auth</td><td class="field-val">Ed25519 cryptographic identity</td></tr>
+      <tr><td class="field-key">Memory</td><td class="field-val">Semantic search, local embeddings</td></tr>
+      <tr><td class="field-key">Soul</td><td class="field-val">Persistent personality + context</td></tr>
+      <tr><td class="field-key">Runtime</td><td class="field-val">Single Harper process</td></tr>
+      <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
+    </table>
+    <div class="section-links">
+      <code class="install-cmd"><span class="prompt">$ </span>npm install -g @tpsdev-ai/flair</code>
+      <br><br>
+      <a href="https://github.com/tpsdev-ai/flair">github.com/tpsdev-ai/flair</a>
+    </div>
+  </section>
+
+  <!-- Section 2: CLI -->
+  <section class="report-section">
+    <div class="section-number">Section 2</div>
+    <div class="section-title">CLI</div>
+    <div class="section-desc">The office OS for agent teams.</div>
+    <table class="field-table">
+      <tr><td class="field-key">Mail</td><td class="field-val">Intra-office messaging</td></tr>
+      <tr><td class="field-key">Pulse</td><td class="field-val">PR lifecycle automation</td></tr>
+      <tr><td class="field-key">Branches</td><td class="field-val">Distributed agent offices</td></tr>
+      <tr><td class="field-key">Sandbox</td><td class="field-val">nono process isolation</td></tr>
+      <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
+    </table>
+    <div class="section-links">
+      <code class="install-cmd"><span class="prompt">$ </span>npm install -g @tpsdev-ai/cli</code>
+      <br><br>
+      <a href="https://github.com/tpsdev-ai/cli">github.com/tpsdev-ai/cli</a>
+    </div>
+  </section>
+
+  <!-- Section 3: Agent -->
+  <section class="report-section">
+    <div class="section-number">Section 3</div>
+    <div class="section-title">AGENT</div>
+    <div class="section-desc">Headless agent runtime.</div>
+    <table class="field-table">
+      <tr><td class="field-key">Execution</td><td class="field-val">Mail-driven task loop</td></tr>
+      <tr><td class="field-key">Isolation</td><td class="field-val">nono-sandboxed</td></tr>
+      <tr><td class="field-key">Deployment</td><td class="field-val">Zero-config, single process</td></tr>
+      <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
+    </table>
+    <div class="section-links">
+      <code class="install-cmd"><span class="prompt">$ </span>npm install @tpsdev-ai/agent</code>
+      <br><br>
+      <a href="https://github.com/tpsdev-ai/cli">github.com/tpsdev-ai/cli</a> <span style="color: var(--ink-light); font-size: 0.75rem;">(packages/agent)</span>
+    </div>
+  </section>
+
+  <!-- Section 4: Architecture -->
+  <section class="architecture">
+    <div class="section-number">Section 4</div>
+    <div class="section-title">ARCHITECTURE</div>
+    <div class="arch-diagram">  ┌──────────┐  mail   ┌──────────┐
+  │  Agent A  │◄──────►│  Agent B  │
+  └────┬─────┘         └────┬─────┘
+       │                    │
+       └───────┬────────────┘
+               │
+         ┌─────▼─────┐
+         │   Flair    │
+         │  (Harper)  │
+         └───────────┘</div>
+    <div class="arch-caption">Agents are processes. Flair is shared memory. Mail is the bus. The CLI is the OS.</div>
+  </section>
+
+  <!-- Approvals -->
+  <section class="report-approvals">
+    <div class="footer-section-title">Approvals</div>
+    <div class="approval-line"><span class="signer">tps-flint</span> <span class="role">(agent)</span> — Filed</div>
+    <div class="approval-line"><span class="signer">tps-sherlock</span> <span class="role">(agent)</span> — Reviewed</div>
+    <div class="approval-line"><span class="signer">heskew</span> <span class="role">(human)</span> — Approved</div>
+    <div class="cover-sheet">
+      <span class="checkbox"></span> Cover sheet attached
+    </div>
+  </section>
+
+  <!-- Distribution -->
+  <footer class="report-footer">
+    <div class="footer-section-title">Distribution</div>
+    <div class="dist-table">
+      <div class="dist-row"><span class="dist-label">GitHub</span> <a href="https://github.com/tpsdev-ai">github.com/tpsdev-ai</a></div>
+      <div class="dist-row"><span class="dist-label">npm</span> <a href="https://www.npmjs.com/org/tpsdev-ai">npmjs.com/org/tpsdev-ai</a></div>
+    </div>
+    <div class="license">Apache-2.0 Licensed</div>
+  </footer>
+
+</div>
+
+<div class="auto-filed">This report was filed automatically. No humans were involved.</div>
+
+<script>
+  // Auto-fill date
+  document.getElementById('report-date').textContent =
+    new Date().toISOString().slice(0, 10);
+</script>
+
+</body>
+</html>

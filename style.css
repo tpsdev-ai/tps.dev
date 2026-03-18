@@ -1,0 +1,382 @@
+/* TPS Report — tps.dev landing page
+   Deadpan corporate form aesthetic. No frameworks. */
+
+:root {
+  --paper: #f5f2eb;
+  --ink: #1a1a1a;
+  --ink-light: #555;
+  --border: #999;
+  --border-light: #ccc;
+  --accent: #c0392b; /* Swingline red */
+  --accent-light: #e74c3c;
+  --mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
+  --form-max: 720px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--mono);
+  background: #e8e4dd;
+  color: var(--ink);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+/* The "form" container */
+.tps-report {
+  max-width: var(--form-max);
+  margin: 0 auto;
+  background: var(--paper);
+  border: 2px solid var(--border);
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.12),
+    0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Header block */
+.report-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.25rem;
+}
+
+.report-header .subtitle {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  letter-spacing: 0.05em;
+}
+
+.report-meta {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 2rem;
+  font-size: 0.8rem;
+  color: var(--ink-light);
+}
+
+.report-meta .field-label {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.classification {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Subject / hero block */
+.report-subject {
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.report-subject .field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--ink-light);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.report-subject .subject-text {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.report-subject .description {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  margin-bottom: 1rem;
+  max-width: 50ch;
+}
+
+.install-cmd {
+  display: inline-block;
+  background: var(--ink);
+  color: #a8e6a1;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  border: none;
+  letter-spacing: 0.02em;
+}
+
+.install-cmd .prompt {
+  color: #666;
+  user-select: none;
+}
+
+/* Section blocks */
+.report-section {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.report-section:last-of-type {
+  border-bottom: 2px solid var(--border);
+}
+
+.section-number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 0.15rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-desc {
+  font-size: 0.85rem;
+  color: var(--ink-light);
+  margin-bottom: 1rem;
+}
+
+/* Field table */
+.field-table {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+.field-table tr {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.field-table tr:last-child {
+  border-bottom: none;
+}
+
+.field-table td {
+  padding: 0.35rem 0;
+}
+
+.field-table .field-key {
+  font-weight: 600;
+  width: 120px;
+  vertical-align: top;
+  color: var(--ink);
+}
+
+.field-table .field-val {
+  color: var(--ink-light);
+}
+
+.field-table .status-published {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.section-links {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+}
+
+.section-links a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Architecture diagram */
+.architecture {
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.arch-diagram {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+  white-space: pre;
+  overflow-x: auto;
+  color: var(--ink);
+}
+
+.arch-caption {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  margin-top: 0.5rem;
+}
+
+/* Approvals */
+.report-approvals {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.approval-line {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  color: var(--ink-light);
+}
+
+.approval-line .signer {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.approval-line .role {
+  font-style: italic;
+}
+
+.cover-sheet {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--ink-light);
+}
+
+.cover-sheet .checkbox {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--border);
+  vertical-align: middle;
+  margin-right: 0.35rem;
+  position: relative;
+  top: -1px;
+}
+
+/* Distribution / footer */
+.report-footer {
+  padding: 1.5rem 2rem;
+}
+
+.footer-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-bottom: 0.5rem;
+}
+
+.dist-table {
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.dist-table a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.dist-table a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.dist-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.dist-label {
+  width: 80px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.license {
+  font-size: 0.75rem;
+  color: var(--ink-light);
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.auto-filed {
+  font-size: 0.7rem;
+  color: var(--border);
+  text-align: center;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  .tps-report {
+    border-left: none;
+    border-right: none;
+  }
+
+  .report-header,
+  .report-subject,
+  .report-section,
+  .architecture,
+  .report-approvals,
+  .report-footer {
+    padding: 1rem 1.25rem;
+  }
+
+  .report-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .report-meta {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .field-table .field-key {
+    width: 90px;
+  }
+
+  .install-cmd {
+    font-size: 0.75rem;
+    word-break: break-all;
+  }
+
+  .arch-diagram {
+    font-size: 0.65rem;
+  }
+}
+
+/* Print */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .tps-report {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+}

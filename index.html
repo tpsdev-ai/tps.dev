@@ -95,20 +95,49 @@
   <section class="architecture" id="architecture">
     <div class="section-number">Section 4</div>
     <div class="section-title">ARCHITECTURE</div>
-    <div class="arch-diagram-css">
-      <div class="arch-row">
-        <div class="arch-box">Agent A</div>
-        <div class="arch-arrow">&#8592; mail &#8594;</div>
-        <div class="arch-box">Agent B</div>
+
+    <div class="arch-offices">
+      <!-- HQ Office -->
+      <div class="arch-office">
+        <div class="arch-office-label">Headquarters</div>
+        <div class="arch-office-inner">
+          <div class="arch-agents">
+            <div class="arch-box arch-box-small">Agent</div>
+            <div class="arch-box arch-box-small">Agent</div>
+            <div class="arch-box arch-box-small">Agent</div>
+          </div>
+          <div class="arch-office-bus">&#8593; mail &#8595;</div>
+          <div class="arch-office-stack">
+            <div class="arch-box arch-box-accent"><a href="#flair">Flair</a></div>
+            <div class="arch-box arch-box-cli"><a href="#cli">CLI</a></div>
+          </div>
+        </div>
       </div>
-      <div class="arch-connector">
-        <div class="arch-line-down"></div>
+
+      <!-- Tunnel -->
+      <div class="arch-tunnel">
+        <div class="arch-tunnel-line"></div>
+        <div class="arch-tunnel-label">branch tunnel</div>
+        <div class="arch-tunnel-line"></div>
       </div>
-      <div class="arch-row">
-        <div class="arch-box arch-box-accent"><a href="#flair">Flair</a><span class="arch-sub">(<a href="https://www.harperdb.io/">Harper</a>)</span></div>
+
+      <!-- Branch Office -->
+      <div class="arch-office arch-office-branch">
+        <div class="arch-office-label">Branch Office</div>
+        <div class="arch-office-inner">
+          <div class="arch-agents">
+            <div class="arch-box arch-box-small">Agent</div>
+          </div>
+          <div class="arch-office-bus">&#8593; mail &#8595;</div>
+          <div class="arch-office-stack">
+            <div class="arch-box arch-box-accent"><a href="#flair">Flair</a></div>
+            <div class="arch-box arch-box-cli"><a href="#cli">CLI</a></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="arch-caption">Agents are processes. <a href="#flair">Flair</a> is shared memory. Mail is the bus. The <a href="#cli">CLI</a> is the OS.</div>
+
+    <div class="arch-caption">Each office runs its own <a href="#flair">Flair</a> + <a href="#cli">CLI</a>. Agents communicate via mail. Branch offices connect to HQ over encrypted tunnels. Scale by adding offices, not complexity.</div>
   </section>
 
   <!-- Approvals -->

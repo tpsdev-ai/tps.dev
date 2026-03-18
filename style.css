@@ -111,16 +111,41 @@ body {
 }
 
 .install-cmd {
-  display: inline-block;
-  background: var(--ink);
-  color: #a8e6a1;
+  display: block;
+  background: #2a2a2a;
+  color: #b8b8b8;
   padding: 0.5rem 1rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   border: none;
   letter-spacing: 0.02em;
 }
 
 .install-cmd .prompt {
+  color: #666;
+  user-select: none;
+}
+
+/* Group consecutive install-cmds into one terminal block */
+.terminal-block {
+  display: flex;
+  flex-direction: column;
+  background: #2a2a2a;
+  padding: 0.6rem 1rem;
+  margin: 0.75rem 0;
+  gap: 0.2rem;
+}
+
+.terminal-block code {
+  display: block;
+  background: none;
+  color: #b8b8b8;
+  padding: 0;
+  font-size: 0.8rem;
+  font-family: var(--mono);
+  letter-spacing: 0.02em;
+}
+
+.terminal-block .prompt {
   color: #666;
   user-select: none;
 }
@@ -178,17 +203,6 @@ body {
 .subsection-title a:hover {
   color: var(--accent);
   border-bottom-color: var(--accent);
-}
-
-.setup-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin: 0.75rem 0;
-}
-
-.setup-steps .install-cmd {
-  display: block;
 }
 
 .setup-note {

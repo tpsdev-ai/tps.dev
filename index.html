@@ -39,11 +39,14 @@
   <section class="report-section" id="flair">
     <div class="section-number">Section 1</div>
     <div class="section-title">FLAIR</div>
-    <div class="section-desc">Identity, memory, and soul for AI agents. Runs standalone or as part of a TPS office.</div>
+    <div class="section-desc">Identity, memory, and soul for AI agents — the memory layer that follows the agent across harnesses. Runs standalone or as part of a TPS office.</div>
     <table class="field-table">
-      <tr><td class="field-key">Auth</td><td class="field-val">Ed25519 cryptographic identity</td></tr>
-      <tr><td class="field-key">Memory</td><td class="field-val">Semantic search, local embeddings</td></tr>
-      <tr><td class="field-key">Soul</td><td class="field-val">Persistent personality + context</td></tr>
+      <tr><td class="field-key">Identity</td><td class="field-val">Ed25519 keypair per agent; every read and write signed</td></tr>
+      <tr><td class="field-key">Memory</td><td class="field-val">Semantic search, in-process embeddings, no API calls</td></tr>
+      <tr><td class="field-key">Soul</td><td class="field-val">Persistent personality, values, and procedures</td></tr>
+      <tr><td class="field-key">Harnesses</td><td class="field-val">11+ surfaces — Claude Code, Cursor, Codex, Gemini CLI, OpenClaw, LangGraph, n8n, Hermes, Pi, more</td></tr>
+      <tr><td class="field-key">Bridges</td><td class="field-val">Import/export to Mem0, Letta, claude-project, ChatGPT — open-source, pluggable</td></tr>
+      <tr><td class="field-key">Federation</td><td class="field-val">Hub-and-spoke peering across hosts; memory syncs with provenance</td></tr>
       <tr><td class="field-key">Runtime</td><td class="field-val">Single <a href="https://harper.fast/">Harper</a> process</td></tr>
       <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
     </table>
@@ -54,6 +57,15 @@
     </div>
     <div class="section-links">
       <a href="https://github.com/tpsdev-ai/flair">github.com/tpsdev-ai/flair</a>
+    </div>
+
+    <div class="subsection" id="mcp">
+      <div class="subsection-title">MCP — for Claude Code, Cursor, Codex, Gemini CLI, Continue.dev, Goose</div>
+      <div class="section-desc">One MCP server, every MCP-capable client. Same memory follows the agent across CLIs.</div>
+      <div class="terminal-block">
+        <code><span class="prompt">$ </span>npx -y @tpsdev-ai/flair-mcp</code>
+      </div>
+      <div class="setup-note">Add to <code>.mcp.json</code> with <code>FLAIR_AGENT_ID</code>. Exposes <code>memory_store</code>, <code>memory_search</code>, <code>bootstrap</code>, <code>soul_set</code>, more.</div>
     </div>
 
     <div class="subsection" id="openclaw">
@@ -70,17 +82,20 @@
   <section class="report-section" id="cli">
     <div class="section-number">Section 2</div>
     <div class="section-title">CLI</div>
-    <div class="section-desc">The office OS for agent teams.</div>
+    <div class="section-desc">The office OS for agent teams. Hire, brief, and dispatch agents from one command surface.</div>
     <table class="field-table">
-      <tr><td class="field-key">Mail</td><td class="field-val">Intra-office messaging</td></tr>
-      <tr><td class="field-key">Pulse</td><td class="field-val">PR lifecycle automation</td></tr>
-      <tr><td class="field-key">Branches</td><td class="field-val">Distributed agent offices</td></tr>
+      <tr><td class="field-key">Hire</td><td class="field-val">Onboard an agent from a .tps report or persona</td></tr>
+      <tr><td class="field-key">Mail</td><td class="field-val">Intra-office messaging — async work handoff between agents</td></tr>
+      <tr><td class="field-key">Skills</td><td class="field-val">Install packaged skill packs from npm into any agent</td></tr>
+      <tr><td class="field-key">Branches</td><td class="field-val">Distributed agent offices over Tailscale</td></tr>
       <tr><td class="field-key">Sandbox</td><td class="field-val"><a href="https://nono.sh/">nono</a> process isolation</td></tr>
+      <tr><td class="field-key">Identity</td><td class="field-val">Per-agent Ed25519 keys; integrated with Flair</td></tr>
       <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
     </table>
     <div class="terminal-block">
       <code><span class="prompt">$ </span>npm install -g @tpsdev-ai/cli</code>
-      <code><span class="prompt">$ </span>tps office init</code>
+      <code><span class="prompt">$ </span>tps hire developer</code>
+      <code><span class="prompt">$ </span>tps mail send dev "ship the auth refactor"</code>
     </div>
     <div class="section-links">
       <a href="https://github.com/tpsdev-ai/cli">github.com/tpsdev-ai/cli</a>
@@ -91,16 +106,17 @@
   <section class="report-section" id="agent">
     <div class="section-number">Section 3</div>
     <div class="section-title">AGENT</div>
-    <div class="section-desc">Headless agent runtime.</div>
+    <div class="section-desc">Headless agent runtime. Reads mail, does work, ships PRs — no human in the inner loop.</div>
     <table class="field-table">
-      <tr><td class="field-key">Execution</td><td class="field-val">Mail-driven task loop</td></tr>
+      <tr><td class="field-key">Execution</td><td class="field-val">Mail-driven task loop with per-task timeout + retry</td></tr>
+      <tr><td class="field-key">Providers</td><td class="field-val">Anthropic, OpenAI, Google, ollama-cloud, ollama, oMLX — pluggable</td></tr>
       <tr><td class="field-key">Isolation</td><td class="field-val"><a href="https://nono.sh/">nono</a>-sandboxed</td></tr>
       <tr><td class="field-key">Deployment</td><td class="field-val">Zero-config, single process</td></tr>
       <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
     </table>
     <div class="terminal-block">
       <code><span class="prompt">$ </span>npm install @tpsdev-ai/agent</code>
-      <code><span class="prompt">$ </span>tps agent start --id my-agent</code>
+      <code><span class="prompt">$ </span>tps agent start --config ~/.tps/agents/my-agent/agent.yaml</code>
     </div>
     <div class="section-links">
       <a href="https://github.com/tpsdev-ai/cli">github.com/tpsdev-ai/cli</a> <span style="color: var(--ink-light); font-size: 0.75rem;">(packages/agent)</span>

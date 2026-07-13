@@ -42,13 +42,17 @@
     <div class="section-desc">Identity, memory, and soul for AI agents — the memory layer that follows the agent across harnesses. Runs standalone or as part of a TPS office.</div>
     <table class="field-table">
       <tr><td class="field-key">Identity</td><td class="field-val">Ed25519 keypair per agent; every read and write signed</td></tr>
-      <tr><td class="field-key">Memory</td><td class="field-val">Semantic search, in-process embeddings, no API calls</td></tr>
+      <tr><td class="field-key">Memory</td><td class="field-val">Semantic search, in-process embeddings (nomic search-prefixes on by default), no API calls</td></tr>
       <tr><td class="field-key">Soul</td><td class="field-val">Persistent personality, values, and procedures</td></tr>
+      <tr><td class="field-key">Graph</td><td class="field-val">Relationship triples — agent-writable, assert/upsert, temporal bounds</td></tr>
+      <tr><td class="field-key">Attention</td><td class="field-val">"What's touching X?" — one query across memories, relationships, active work, presence, events; bootstrap flags teammates on the same entities</td></tr>
       <tr><td class="field-key">Harnesses</td><td class="field-val">11+ surfaces — Claude Code, Cursor, Codex, Gemini CLI, OpenClaw, LangGraph, n8n, Hermes, Pi, more</td></tr>
       <tr><td class="field-key">Bridges</td><td class="field-val">Import/export to Mem0, Letta, claude-project, ChatGPT — open-source, pluggable</td></tr>
       <tr><td class="field-key">Federation</td><td class="field-val">Hub-and-spoke peering across hosts; memory syncs with provenance</td></tr>
+      <tr><td class="field-key">Upgrades</td><td class="field-val">Zero-touch — data self-migrates at boot; resumable, downgrade-safe, kill-tested in CI</td></tr>
+      <tr><td class="field-key">Recall</td><td class="field-val">126-query ground-truth benchmark, frozen baseline; standalone <code>flair-bench</code> tool ships in the repo</td></tr>
       <tr><td class="field-key">Runtime</td><td class="field-val">Single <a href="https://harper.fast/">Harper</a> process</td></tr>
-      <tr><td class="field-key">Status</td><td class="field-val status-published">Published</td></tr>
+      <tr><td class="field-key">Status</td><td class="field-val status-published">Published — v[VERSION]</td></tr>
     </table>
     <div class="terminal-block">
       <code><span class="prompt">$ </span>npm install -g @tpsdev-ai/flair</code>
@@ -65,7 +69,7 @@
       <div class="terminal-block">
         <code><span class="prompt">$ </span>npx -y @tpsdev-ai/flair-mcp</code>
       </div>
-      <div class="setup-note">Add to <code>.mcp.json</code> with <code>FLAIR_AGENT_ID</code>. Exposes <code>memory_store</code>, <code>memory_search</code>, <code>bootstrap</code>, <code>soul_set</code>, more.</div>
+      <div class="setup-note">Add to <code>.mcp.json</code> with <code>FLAIR_AGENT_ID</code>. Exposes <code>memory_store</code>, <code>memory_search</code>, <code>memory_get</code>, <code>memory_delete</code>, <code>relationship_store</code>, <code>bootstrap</code>, <code>soul_set</code>, <code>soul_get</code>.</div>
     </div>
 
     <div class="subsection" id="openclaw">

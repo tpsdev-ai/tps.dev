@@ -269,6 +269,11 @@ html {
   font-weight: 600;
 }
 
+.field-table .status-source {
+  color: var(--ink-light);
+  font-weight: 600;
+}
+
 .section-links {
   font-size: 0.8rem;
   color: var(--ink-light);

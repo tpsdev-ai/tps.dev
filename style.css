@@ -600,3 +600,130 @@ html {
     border: 1px solid #000;
   }
 }
+
+/* ==========================================================
+   Additions: /memory connect page (Form MEM-001)
+   Numbered step rows + tap-to-copy MCP URL button.
+   ========================================================== */
+
+.step-row {
+  display: flex;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border-light);
+  align-items: flex-start;
+}
+
+.step-row:last-child {
+  border-bottom: none;
+}
+
+.step-num {
+  font-weight: 600;
+  width: 100px;
+  flex-shrink: 0;
+  color: var(--ink);
+  font-size: 0.8rem;
+}
+
+.step-body {
+  flex: 1 1 auto;
+  font-size: 0.85rem;
+  color: var(--ink-light);
+}
+
+.step-body a {
+  color: var(--ink-light);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.step-body a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.step-instr {
+  color: var(--ink-light);
+  margin-bottom: 0.35rem;
+}
+
+/* URL terminal block with copy button */
+.url-terminal {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.url-terminal code {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.copy-btn {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  border: 1.5px solid var(--accent);
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+}
+
+.copy-btn:active {
+  transform: translateY(1px);
+}
+
+.copy-btn.copied {
+  background: #27ae60;
+  border-color: #27ae60;
+}
+
+.footer-line {
+  font-size: 0.8rem;
+  color: var(--ink-light);
+}
+
+.footer-line a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.footer-line a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 500px) {
+  .step-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .step-num {
+    width: auto;
+  }
+
+  .url-terminal {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .copy-btn {
+    width: 100%;
+  }
+}

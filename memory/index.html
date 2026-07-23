@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TPS REPORT — Form MEM-001</title>
+  <meta name="description" content="Connect any AI agent to a public Flair memory server over MCP in about a minute.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="tps-report">
+
+  <!-- Header -->
+  <header class="report-header">
+    <h1>TPS REPORT</h1>
+    <div class="subtitle">Form MEM-001 — Memory Issuance Request</div>
+    <div class="report-meta">
+      <span><span class="field-label">Form:</span> MEM-001</span>
+      <span><span class="field-label">Date:</span> <time id="report-date">2026-07-23</time></span>
+      <span><span class="field-label">Classification:</span> <span class="classification">PUBLIC</span></span>
+    </div>
+  </header>
+
+  <!-- Subject -->
+  <section class="report-subject">
+    <div class="field-label">Subject</div>
+    <div class="subject-text">Give your AI a memory.</div>
+    <div class="description">Flair is an open-source memory server for AI agents, over MCP. This one is public — connect any agent and it remembers.</div>
+  </section>
+
+  <!-- Section 1: Connect -->
+  <section class="report-section" id="connect">
+    <div class="section-number">Section 1</div>
+    <div class="section-title">CONNECT</div>
+    <div class="section-desc">Three steps. About sixty seconds.</div>
+
+    <div class="step-row">
+      <div class="step-num">Step 1</div>
+      <div class="step-body">
+        <div class="step-instr">Copy the memory server URL.</div>
+        <!-- TODO: real Fabric URL — replace the string in #mcp-url-code below; the copy button reads it automatically -->
+        <div class="terminal-block url-terminal">
+          <code id="mcp-url-code">https://PENDING.example/mcp</code>
+          <button type="button" class="copy-btn" id="copy-url-btn" aria-live="polite">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">Step 2</div>
+      <div class="step-body">
+        For <strong>claude.ai</strong> or Claude mobile: open <a href="https://claude.ai/settings/connectors">claude.ai/settings/connectors</a>, choose "Add custom connector," and paste the URL. Added on the web, syncs to your phone automatically.
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">Step 3</div>
+      <div class="step-body">
+        Ask your AI: <em>"What do you remember?"</em> — first recall is seeded.
+      </div>
+    </div>
+
+    <div class="step-row">
+      <div class="step-num">Other clients</div>
+      <div class="step-body">
+        Any other MCP client: paste the same URL wherever your client takes a remote MCP server.
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: What is this -->
+  <section class="report-section" id="about">
+    <div class="section-number">Section 2</div>
+    <div class="section-title">WHAT IS THIS?</div>
+    <table class="field-table">
+      <tr><td class="field-key">Identity</td><td class="field-val">Signed identities — no anonymous writes</td></tr>
+      <tr><td class="field-key">Recall</td><td class="field-val">Trust-graded — your AI sees how much to trust each memory</td></tr>
+      <tr><td class="field-key">Source</td><td class="field-val"><a href="https://github.com/tpsdev-ai/flair">github.com/tpsdev-ai/flair</a> — open source</td></tr>
+      <tr><td class="field-key">Self-host</td><td class="field-val"><code>npm i -g @tpsdev-ai/flair</code> — run your own instead of the public one</td></tr>
+    </table>
+  </section>
+
+  <!-- Distribution -->
+  <footer class="report-footer">
+    <div class="footer-line">Public preview. Be kind; everything is signed. — <a href="/">tps.dev</a></div>
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('report-date').textContent =
+    new Date().toISOString().slice(0, 10);
+
+  var copyBtn = document.getElementById('copy-url-btn');
+  var urlCode = document.getElementById('mcp-url-code');
+
+  copyBtn.addEventListener('click', function () {
+    var url = urlCode.textContent.trim();
+
+    function showCopied() {
+      copyBtn.textContent = 'Copied ✓';
+      copyBtn.classList.add('copied');
+      setTimeout(function () {
+        copyBtn.textContent = 'Copy';
+        copyBtn.classList.remove('copied');
+      }, 1600);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(showCopied, function () {
+        fallbackCopy(url);
+        showCopied();
+      });
+    } else {
+      fallbackCopy(url);
+      showCopied();
+    }
+  });
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) { /* no-op */ }
+    document.body.removeChild(ta);
+  }
+</script>
+
+</body>
+</html>

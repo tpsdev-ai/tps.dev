@@ -22,7 +22,7 @@
     <h1>TPS REPORT</h1>
     <div class="subtitle">Team Provisioning System — Development Division</div>
     <div class="report-meta">
-      <span><span class="field-label">Form:</span> TPS-001 Rev. 5</span>
+      <span><span class="field-label">Form:</span> TPS-001 Rev. 6</span>
       <span><span class="field-label">Date:</span> <time id="report-date">2026-08-10</time></span>
       <span><span class="field-label">Classification:</span> <span class="classification">PUBLIC</span></span>
     </div>
@@ -71,7 +71,7 @@
       <div class="terminal-block">
         <code><span class="prompt">$ </span>npx -y @tpsdev-ai/flair-mcp</code>
       </div>
-      <div class="setup-note">Add to <code>.mcp.json</code> with <code>FLAIR_AGENT_ID</code>. Exposes <code>memory_store</code>, <code>memory_search</code>, <code>memory_get</code>, <code>memory_delete</code>, <code>bootstrap</code>, <code>soul_set</code>, <code>soul_get</code>.</div>
+      <div class="setup-note">Add to <code>.mcp.json</code> with <code>FLAIR_AGENT_ID</code>. Twelve tools — memory, soul, bootstrap, relationships, workspace.</div>
       <div class="docs-links">
         <span class="docs-label">Docs:</span>
         <a href="https://github.com/tpsdev-ai/flair/blob/main/docs/mcp-clients.md">MCP clients</a>
@@ -103,7 +103,12 @@
         <span class="docs-sep">·</span>
         <a href="https://www.npmjs.com/package/@tpsdev-ai/adk-flair">npmjs.com/package/@tpsdev-ai/adk-flair</a>
         <span class="docs-sep">·</span>
-        <a href="https://github.com/tpsdev-ai/flair/tree/main/packages/adk-flair-js">github.com/tpsdev-ai/flair</a>
+        <a href="https://github.com/tpsdev-ai/flair">github.com/tpsdev-ai/flair</a>
+      </div>
+      <div class="setup-note">Pass <code>FlairMemoryService</code> to <code>Runner</code>. Memory persists across sessions.</div>
+      <div class="docs-links">
+        <span class="docs-label">Docs:</span>
+        <a href="https://github.com/tpsdev-ai/flair/blob/main/packages/adk-flair/README.md">ADK setup</a>
       </div>
     </div>
   </section>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TPS-404 — Misfiled Report</title>
+  <meta name="description" content="The requested form is not on file.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="tps-report">
+
+  <header class="report-header">
+    <h1>TPS REPORT</h1>
+    <div class="subtitle">Team Provisioning System — Records Division</div>
+    <div class="report-meta">
+      <span><span class="field-label">Form:</span> TPS-404</span>
+      <span><span class="field-label">Date:</span> <time id="report-date">2026-08-10</time></span>
+      <span><span class="field-label">Classification:</span> <span class="classification">MISFILED</span></span>
+    </div>
+  </header>
+
+  <section class="report-subject">
+    <div class="field-label">Subject</div>
+    <div class="subject-text">Requested form not on file</div>
+    <div class="description">This path is not a filed TPS report. /docs, /blog, and /guides are not maintained on this host.</div>
+  </section>
+
+  <section class="report-section">
+    <div class="section-number">Disposition</div>
+    <div class="section-title">Return to a filed form</div>
+    <table class="field-table">
+      <tr><td class="field-key">Cover sheet</td><td class="field-val"><a href="https://tps.dev/">tps.dev</a></td></tr>
+      <tr><td class="field-key">Flair docs</td><td class="field-val"><a href="https://github.com/tpsdev-ai/flair/tree/main/docs">github.com/tpsdev-ai/flair/tree/main/docs</a></td></tr>
+    </table>
+  </section>
+
+  <section class="report-approvals">
+    <div class="footer-section-title">Approvals</div>
+    <div class="approval-line"><span class="signer">tps-flint</span> <span class="role">(agent)</span> — Filed</div>
+    <div class="cover-sheet">
+      <span class="checkbox"></span> Cover sheet attached
+    </div>
+  </section>
+
+</div>
+
+<div class="auto-filed">
+  <img src="/stapler-org.png" alt="TPS" class="footer-stapler" width="32" height="32">
+  <br>This report was filed automatically. No humans were involved.
+</div>
+
+<script>
+  document.getElementById('report-date').textContent =
+    new Date().toISOString().slice(0, 10);
+</script>
+
+</body>
+</html>
